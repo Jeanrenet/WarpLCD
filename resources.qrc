@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>Images/temperature.svg</file>
+    </qresource>
+</RCC>
