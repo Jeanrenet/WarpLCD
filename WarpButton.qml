@@ -13,15 +13,14 @@ Item {
         width: 100
         height: 100
         background: Item {
-
             Glow {
                 id: effect
-                color: button.pressed?"blue":"grey"
+                color: "grey"
                 anchors.fill: image
                 source: image
                 radius: 10
                 samples: 17
-                visible: button.hovered
+                visible: button.pressed
             }
 
             Image {

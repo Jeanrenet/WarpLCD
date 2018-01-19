@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/Images">
         <file>Images/temperature.svg</file>
+        <file>Images/3d.svg</file>
+        <file>Images/magnetic-field.svg</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

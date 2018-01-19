@@ -8,10 +8,7 @@ Window {
     width: 640
     height: 480
 
-    WarpButton {
-        id: button
-        x: parent.width/2 - button.width/2
-        y: parent.height/2 - button.height/2
-        iconName: "qrc:/Images/Images/temperature.svg"
+    MainMenu {
+        anchors.fill: parent
     }
 }
