@@ -1,38 +1,39 @@
 import QtQuick 2.9
-import QtQuick.Extras 1.4
-import QtQuick.Controls 1.4
+import QtQuick.Controls 2.2
 
 Item {
-    PieMenu {
-        id: pieMenu
+    anchors.centerIn: parent
+    //anchors.
 
-        MenuItem {
-            text: "Cut"
-          /*  */
-        }
-        MenuItem {
-            text: "Cut"
+    SwipeView {
+        id: view
+        anchors.fill: parent
+        currentIndex: 1
 
+        WarpButton {
+            id: temperatureBtn
+            iconName: "qrc:/Images/Images/temperature.svg"
         }
-        MenuItem {
-            text: "Cut"
+        WarpButton {
+            id: acceleroBtn
+            iconName: "qrc:/Images/Images/3d.svg"
+        }
+        WarpButton {
+            id: magnetoBtn
+            iconName: "qrc:/Images/Images/magnetic-field.svg"
         }
 
     }
+    PageIndicator {
+        id: indicator
 
-    /*
-        WarpButton {
-                        id: temperatureBtn
-                        iconName: "qrc:/Images/Images/temperature.svg"
-            }
-            WarpButton {
-          id: acceleroBtn
-          iconName: "qrc:/Images/Images/3d.svg"
-      }
+        count: view.count
+        currentIndex: view.currentIndex
 
-      WarpButton {
-          id: magnetoBtn
-          iconName: "qrc:/Images/Images/magnetic-field.svg"
-      }*/
-
+        anchors.bottom: view.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
 }
+
+
+
