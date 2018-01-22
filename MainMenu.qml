@@ -3,7 +3,6 @@ import QtQuick.Controls 2.2
 
 Item {
     anchors.centerIn: parent
-    //anchors.
 
     SwipeView {
         id: view
@@ -13,6 +12,11 @@ Item {
         WarpButton {
             id: temperatureBtn
             iconName: "qrc:/Images/Images/temperature.svg"
+
+            onButtonClicked: {
+                console.log("caca")
+                mainLoader.source = "MenuTemperature.qml"
+            }
         }
         WarpButton {
             id: acceleroBtn
@@ -32,6 +36,9 @@ Item {
 
         anchors.bottom: view.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+    }
+    Loader {
+        id: mainLoader
     }
 }
 

@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     property string iconName
 
+    signal buttonClicked;
+
     Button {
         id: button        
         anchors.centerIn: parent
@@ -17,14 +19,16 @@ Item {
             height: parent.height
             Image {
                 id: image
+                fillMode: Image.Stretch
                 smooth: true
                 anchors.centerIn: parent
                 source: iconName
                 sourceSize.width: parent.width * (button.pressed? 1.2: 1)
                 sourceSize.height: parent.height * (button.pressed? 1.2: 1)
-
-                fillMode: Image.Stretch
             }
+        }
+        onClicked: {
+            buttonClicked()
         }
     }
 }
