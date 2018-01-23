@@ -4,5 +4,6 @@
         <file>WarpButton.qml</file>
         <file>MainMenu.qml</file>
         <file>MenuTemperature.qml</file>
+        <file>MenuAccelerometer.qml</file>
     </qresource>
 </RCC>

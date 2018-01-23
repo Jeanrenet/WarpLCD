@@ -1,6 +1,5 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
 
 Item {
     property string iconName
@@ -10,8 +9,8 @@ Item {
     Button {
         id: button        
         anchors.centerIn: parent
-        width: parent.width * 0.70
-        height: parent.height * 0.70
+        width: parent.width * 0.60
+        height: parent.height * 0.60
 
         background: Rectangle {
             id: background
@@ -23,8 +22,8 @@ Item {
                 smooth: true
                 anchors.centerIn: parent
                 source: iconName
-                sourceSize.width: parent.width * (button.pressed? 1.2: 1)
-                sourceSize.height: parent.height * (button.pressed? 1.2: 1)
+                sourceSize.width: parent.width * (button.pressed? 1: 0.9)
+                sourceSize.height: parent.height * (button.pressed? 1: 0.9)
             }
         }
         onClicked: {

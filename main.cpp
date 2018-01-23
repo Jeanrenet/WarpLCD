@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "CMenuTemperature.h"
+#include "CDataManager.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     //création des classes
-    CMenuTemperature    *temperature = new CMenuTemperature;
+    CDataManager    *dataManager = new CDataManager;
 
     QQmlApplicationEngine engine;
 
     //export des classes vers QML
-    engine.rootContext()->setContextProperty("Temperature", temperature);
+    engine.rootContext()->setContextProperty("DataManager", dataManager);
 
     //load
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

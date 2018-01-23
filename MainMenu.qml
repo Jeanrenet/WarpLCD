@@ -4,6 +4,12 @@ import QtQuick.Controls 2.2
 Item {
     anchors.centerIn: parent
 
+    Connections {
+        ignoreUnknownSignals: true
+        target: mainLoader.valid? mainLoader.item : null
+        onPageExit: { mainLoader.source = "" }
+    }
+
     SwipeView {
         id: view
         anchors.fill: parent
@@ -14,13 +20,16 @@ Item {
             iconName: "qrc:/Images/Images/temperature.svg"
 
             onButtonClicked: {
-                console.log("caca")
                 mainLoader.source = "MenuTemperature.qml"
             }
         }
         WarpButton {
             id: acceleroBtn
             iconName: "qrc:/Images/Images/3d.svg"
+
+            onButtonClicked: {
+                mainLoader.source = "MenuAccelerometer.qml"
+            }
         }
         WarpButton {
             id: magnetoBtn
@@ -35,10 +44,13 @@ Item {
         currentIndex: view.currentIndex
 
         anchors.bottom: view.bottom
+        anchors.bottomMargin: 25
         anchors.horizontalCenter: parent.horizontalCenter
     }
     Loader {
         id: mainLoader
+        focus: true
+        property bool valid: item !== null
     }
 }
 
