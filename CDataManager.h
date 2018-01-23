@@ -25,7 +25,7 @@ protected slots:
     void readData();
 
 private:
-    double          m_temperature;
+    quint32          m_temperature;
     double          m_accelerometerX;
     double          m_accelerometerY;
     double          m_accelerometerZ;

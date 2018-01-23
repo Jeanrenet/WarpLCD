@@ -25,14 +25,14 @@ Item {
 
         Rectangle {
             radius: 150
-            width: 25 * DataManager.accelerometerZ
+            width: 25
             height: 25
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "blue"; }
                 GradientStop { position: 1.0; color: "green"; }
             }
-            x: DataManager.accelerometerX
-            y: DataManager.accelerometerY
+            y: (DataManager.accelerometerX / 20) * 100 +160
+            x: (DataManager.accelerometerZ / 20 ) * 100 +160
         }
 
     }
