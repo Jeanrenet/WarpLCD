@@ -6,7 +6,7 @@ import "."
 Window {
     visible: true
     width: 320
-    height: 320
+    height: 340
 
     MainMenu {
         width: 320

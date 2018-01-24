@@ -25,15 +25,20 @@ Item {
 
         Rectangle {
             radius: 150
-            width: 25
-            height: 25
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "blue"; }
-                GradientStop { position: 1.0; color: "green"; }
-            }
-            x: -(DataManager.accelerometerX / 10) * 100 +160
-            y: (DataManager.accelerometerY / 10 ) * 100 +160
-        }
+            width: 30
+            height: 30
 
+            Image {
+                source: "qrc:/Images/Images/ball.svg"
+                fillMode: Image.Stretch
+                smooth: true
+                anchors.centerIn: parent
+                sourceSize.width: parent.width
+                sourceSize.height: parent.height
+
+            }
+            x: -(DataManager.accelerometerX / 10) * 120 +160
+            y: (DataManager.accelerometerY / 10 ) * 120 +160
+        }
     }
 }
