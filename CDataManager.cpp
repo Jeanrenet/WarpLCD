@@ -15,7 +15,7 @@ CDataManager::CDataManager()
             SLOT(readData()));
 
     //démarrage du timer
-    m_timer.start(100);
+    m_timer.start(10);
 }
 
 void CDataManager::readData()
@@ -35,8 +35,6 @@ void CDataManager::readData()
                 >> m_magnetometerX
                 >> m_magnetometerY
                 >> m_magnetometerZ;
-
-        qDebug() << m_accelerometerX <<m_accelerometerY << m_accelerometerZ;
         //mise à jour
         Q_EMIT dataChanged();
     }

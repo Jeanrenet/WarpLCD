@@ -31,8 +31,8 @@ Item {
                 GradientStop { position: 0.0; color: "blue"; }
                 GradientStop { position: 1.0; color: "green"; }
             }
-            y: (DataManager.accelerometerX / 20) * 100 +160
-            x: (DataManager.accelerometerZ / 20 ) * 100 +160
+            x: -(DataManager.accelerometerX / 10) * 100 +160
+            y: (DataManager.accelerometerY / 10 ) * 100 +160
         }
 
     }
