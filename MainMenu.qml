@@ -2,18 +2,16 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 
 Item {
-    anchors.centerIn: parent
-
     Connections {
         ignoreUnknownSignals: true
         target: mainLoader.valid? mainLoader.item : null
         onPageExit: { mainLoader.source = "" }
     }
-
+    //permet de "swiper" entre les menus
     SwipeView {
         id: view
         anchors.fill: parent
-        currentIndex: 1
+        currentIndex: 1 //index par défaut
 
         WarpButton {
             id: temperatureBtn
@@ -35,8 +33,8 @@ Item {
             id: magnetoBtn
             iconName: "qrc:/Images/Images/magnetic-field.svg"
         }
-
     }
+    //indicateur permettant d'identifier l'index en cours
     PageIndicator {
         id: indicator
 
@@ -50,6 +48,7 @@ Item {
     Loader {
         id: mainLoader
         focus: true
+        //définit une propriété de validité qu'un item a été chargé
         property bool valid: item !== null
     }
 }
